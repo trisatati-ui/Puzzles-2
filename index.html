@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manchester United Logo Puzzle</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated gradient background -->
+  <div class="bg"></div>
+
+  <main class="app">
+    <header class="header">
+      <h1 class="title">
+        <span class="club">Manchester United</span> Logo Puzzle
+      </h1>
+      <p class="subtitle">Slide the tiles to reassemble the crest.</p>
+    </header>
+
+    <section class="controls">
+      <div class="control-group">
+        <label for="size">Difficulty</label>
+        <select id="size">
+          <option value="3">3 × 3 (Easy)</option>
+          <option value="4">4 × 4 (Medium)</option>
+          <option value="5">5 × 5 (Hard)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="imgUpload">Custom image</label>
+        <input id="imgUpload" type="file" accept="image/*" />
+      </div>
+
+      <button id="shuffle" class="btn primary">Shuffle & Start</button>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span id="moves">0</span> moves</div>
+      <div class="dot">•</div>
+      <div class="stat"><span id="timer">00:00</span></div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Sliding puzzle board" role="application" tabindex="0"></div>
+    </section>
+
+    <footer class="footer">
+      <small>
+        Tip: Press arrow keys to move the empty space. Replace <code>assets/logo.png</code> with your crest.
+      </small>
+      <small class="notice">
+        Note: The Manchester United logo is a protected trademark. Use only if you have permission.
+      </small>
+    </footer>
+  </main>
+
+  <!-- Win overlay -->
+  <div id="win" class="win hidden" aria-hidden="true">
+    <div class="win-card">
+      <h2>You solved it! 🎉</h2>
+      <p><span id="winMoves">0</span> moves • <span id="winTime">00:00</span></p>
+      <button id="playAgain" class="btn">Play again</button>
+    </div>
+    <!-- Lightweight confetti -->
+    <div id="confetti" class="confetti"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
